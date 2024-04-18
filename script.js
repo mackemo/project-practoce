@@ -23,12 +23,13 @@ function searchAPI(city) {
             return response.json();
         })
         .then(function (geoResults) {
+            console.log(geoResults);
             const lat = geoResults.results[0].position.lat;
             const lon = geoResults.results[0].position.lon;
             console.log(lat);
             console.log(lon);
 
-            const apiUrl = `https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=${apiKey}&point=${lat},${lon}`;
+            const apiUrl = `https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=${apiKey}&unit=mph&point=${lat},${lon}`;
 
             fetch(apiUrl)
                 .then(function (response) {
@@ -38,7 +39,7 @@ function searchAPI(city) {
                     console.log(apiData);
                 })
 
-            const ocURL = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&key=789f86d1-a5b2-4530-8ca0-fa64aebcc952&point=${lat},${lon}`;
+            const ocURL = `https://api.openchargemap.io/v3/poi/?output=json&maxresults=20&key=789f86d1-a5b2-4530-8ca0-fa64aebcc952&latitude=${lat}&longitude=${lon}`;
     
             fetch(ocURL)
                 .then(function (response) {
