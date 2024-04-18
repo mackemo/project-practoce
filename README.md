@@ -10,9 +10,11 @@ The process included fetching both APIs and calling them on coordinate parameter
 
 ## Links
 
-Link to website used for this challenge:
+Link to website used for this challenge.
+https://mackemo.github.io/server-side-api-practice/
 
-Link to public Github repository for this challenge:
+Link to public Github repository for this challenge.
+https://github.com/mackemo/server-side-api-practice
 
 ## Technologies Used
 
